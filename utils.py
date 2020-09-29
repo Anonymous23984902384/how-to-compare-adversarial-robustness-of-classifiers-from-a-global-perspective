@@ -3,6 +3,7 @@ import foolbox
 import json
 import pickle
 from PIL import Image
+import os
 
 class L2(foolbox.distances.Distance):
 
