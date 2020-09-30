@@ -14,24 +14,12 @@ Institution: **Will be added after end of reviewing period.**
   
 ## Main idea of the paper
 <p align="center"><img src="images/readme_gif.gif" width="500"></p>
-Adversarial robustness of trained models has attracted considerable attention
-over recent years, within and beyond the scientific community. This is not only
-because of a straight-forward desire to deploy reliable systems, but also
-because of how adversarial attacks challenge our beliefs about deep neural
-networks. Demanding more robust models seems to be the obvious solution --
-however, this requires a rigorous understanding of how one should judge
-adversarial robustness as a property of a given model. Point-wise measures for
-specific threat models are currently the most popular tool for comparing the
-robustness of classifiers and are used in most of the publications on
-adversarial robustness accepted at reputable machine learning conferences within
-recent years. In this work, we use robustness curves to show that point-wise
-measures of robustness continuously fail to capture relevant global properties
-that are essential to reliably compare the robustness of different classifiers.
-We introduce new ways in which robustness curves can be used to systematically
-uncover these properties and provide concrete recommendations for researchers
-and practitioners. Furthermore, we analyze the scale of certain common data
-sets, and we show that robustness thresholds must be adapted to the data set
-they pertain to.
+Adversarial robustness of trained models has attracted considerable attention over recent years.
+Adversarial attacks undermine the reliability of and trust in machine learning models, but the construction of more robust models hinges on a rigorous understanding of how one should characterize adversarial robustness as a property of a given model.
+Point-wise measures for specific threat models are currently the most popular tool for comparing the robustness of classifiers and are used in most recent publications on adversarial robustness.
+In this work, we use recently proposed robustness curves to show that point-wise measures of robustness continuously fail to capture important global properties that are essential to reliably compare the robustness of different classifiers.
+We introduce new ways in which robustness curves can be used to systematically uncover these properties and provide concrete recommendations for researchers and practitioners when assessing and comparing the robustness of trained models.
+Furthermore, we characterize scale as an inherent property of data sets, and we analyze it for certain common data sets, demonstrating that robustness thresholds must be chosen accordingly.
 
 ## How to generate robustness curves
 The python script `generate_robustness_curves.py` contains methods to calculate robustness curves. You can either directly execute the script or import the methods from the file. If you directly execute the script, you can define parameters via arguments. Example of usage (estimated runtime: 4 Minutes):
