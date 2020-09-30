@@ -7,10 +7,10 @@ Institution: **Will be added after end of reviewing period.**
 
 
 ## What is in this repository?
-+ The code to calculate robustness curves for a chosen model and dataset
++ A python module to calculate robustness curves for arbitrary models and datasets
 + The code to reproduce all experiments (with figures) from the paper, including the following:
-  + experiments on inter and intra class distances for different datasets and norms
-  + experiments on robustness curves for different models and datasets
+  + 2 experiments on inter class distances for different datasets and norms
+  + 5 experiments on robustness curves for different models and datasets
   
 ## Main idea of the paper
 <p align="center"><img src="images/readme_gif.gif" width="500"></p>
@@ -21,23 +21,16 @@ In this work, we use recently proposed robustness curves to show that point-wise
 We introduce new ways in which robustness curves can be used to systematically uncover these properties and provide concrete recommendations for researchers and practitioners when assessing and comparing the robustness of trained models.
 Furthermore, we characterize scale as an inherent property of data sets, and we analyze it for certain common data sets, demonstrating that robustness thresholds must be chosen accordingly.
 
-## How to generate robustness curves
-The python script `generate_robustness_curves.py` contains methods to calculate robustness curves. You can either directly execute the script or import the methods from the file. If you directly execute the script, you can define parameters via arguments. Example of usage (estimated runtime: 4 Minutes):
+## How to generate robustness curves for arbitrary models and datasets
+The python module `robustness_curves.py` contains methods to calculate robustness curves. A tutorial on how to use the module can be found in the notebook `how_to_generate_robustness_curves.ipynb`. Most of the popular machine learning frameworks are supported (e.g. TensorFlow, PyTorch, JAX). Datasets need to be in numpy array format. The module can be used to generate robustness curves for the l_infty, l_2 and l_1 norms. Plotting and/or saving the generated data is optional.
 
-`python generate_robustness_curves.py --dataset=mnist --n_points=10 --model_path='provable_robustness_max_linear_regions/models/mmr+at/2019-02-17 01:54:16 dataset=mnist nn_type=cnn_lenet_small p_norm=inf lmbd=0.5 gamma_rb=0.2 gamma_db=0.2 ae_frac=0.5 epoch=100.mat' --nn_type='cnn' --norms 2 1 inf --save=True --plot=True`
-
-This calculates and plots the robustness curves for a model trained by Croce et al. for 10 datapoints of the MNIST test set for the l_2, l_1 and l_\infty norms.
-
-The datasets are available in the folder `provable_robustness_max_linear_regions/datasets`. You can choose between the following: `mnist`, `fmnist`, `gts` and `cifar10`. The models are available in the folder `provable_robustness_max_linear_regions/models`. You can execute `python generate_robustness_curves.py --help` to get more information about the different arguments of the script.
-
-## Installation
-
+## Installation and Setup
 We manage python dependencies with anaconda. You can find information on how to install anaconda at: https://docs.anaconda.com/anaconda/install/. After installing, create the environment with executing `conda env create` in the root directory of the repository. This automatically finds and uses the file `environment.yml`, which creates an environment called `robustness` with
 everything needed to run our python files and notebooks. Activate the environment with `conda activate robustness`.
 
 We use tensorflow-gpu 2.1 to calculate adversarial examples. To correctly set up tensorflow for your GPU, follow the instructions from: https://www.tensorflow.org/install/gpu.
 
-We use the julia package [MIPVerify](https://github.com/vtjeng/MIPVerify.jl) with [Gurobi](https://www.gurobi.com/documentation/quickstart.html) to calculate exact minimal adversarial examples in the notebook `experiments/rob_curves_true_vs_approximative.ipynb`. To install julia, follow the instructions from: https://julialang.org/downloads/. To install gurobi, follow the instructions from  https://www.gurobi.com/documentation/quickstart.html (free academic licenses available). You need to install the following julia packages: MIPVerify, Gurobi, JuMP, Images, Printf, MAT, CSV and NPZ. More information on MIPVerify can be found here: https://vtjeng.github.io/MIPVerify.jl/latest/#Installation-1.
+The models and datasets for the experiments are hosted in [Google Drive](https://drive.google.com/drive/folders/1f_Qf1abFXZw1GgWxttO9tgek6M7_lYiZ). In order to reproduce the experiments, you need to download them and extract the folders `models` and `datasets` into the submodule directory `provable_robustness_max_linear_regions`.
 
 ## Contact
 **Will be added after end of reviewing period.**
