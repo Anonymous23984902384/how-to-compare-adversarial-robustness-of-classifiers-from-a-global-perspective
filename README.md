@@ -30,7 +30,7 @@ everything needed to run our python files and notebooks. Activate the environmen
 
 We use tensorflow-gpu 2.1 to calculate adversarial examples. To correctly set up tensorflow for your GPU, follow the instructions from: https://www.tensorflow.org/install/gpu.
 
-The models and datasets for the experiments are hosted in [Google Drive](https://drive.google.com/drive/folders/1f_Qf1abFXZw1GgWxttO9tgek6M7_lYiZ). In order to reproduce the experiments, you need to download them and extract the folders `models` and `datasets` into the submodule directory `provable_robustness_max_linear_regions`.
+The models and datasets for the experiments are hosted in [Google Drive](https://drive.google.com/drive/folders/1f_Qf1abFXZw1GgWxttO9tgek6M7_lYiZ) by Croce et al.. In order to reproduce the experiments, you need to download them and extract the folders `models` and `datasets` into the submodule directory `provable_robustness_max_linear_regions`.
 
 ## Contact
 **Will be added after end of reviewing period.**
